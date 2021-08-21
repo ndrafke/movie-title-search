@@ -28,13 +28,14 @@ function App() {
 
   return (
     <Container className="container">
+      <h2>Quick Movie Title Search</h2>
       <input type="text" placeholder="Search..." onChange={e => {setSearch(e.target.value)}}/>
-      <div className="btn btn-primary btn-sm" onClick={onClick}>Search</div>
+      <div className="btn btn-primary btn-sm" onClick={onClick} style={{margin: "0.5rem"}}>Search</div>
     <div>
-    {movies.map((movie, key) => (
-      <div className="result">
+    {movies.map((movie) => (
+      <div className="result" key={movie.imdbID}>
         <ul>
-        <li key={movie.imdbID}>
+        <li key={movie}>
         <img className= "poster" src={movie.Poster} alt="movie poster"></img>
         <h6>{movie.Title}</h6>
         <p>{movie.Type}</p>

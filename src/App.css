@@ -1,9 +1,18 @@
 .container {
-  background-color: blanchedalmond;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .poster {
   height: 6rem;
   width: 4.5rem;
+}
+.result {
+  background-color: burlywood;
+  border: 0.5rem solid black;
+  padding: 1rem;
+  margin: 1rem;
 }
