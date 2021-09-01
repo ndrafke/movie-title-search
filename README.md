@@ -1,3 +1,3 @@
 # Movie Title Search
 
-Simple React App using hook to call OMDB API to retrieve a list of movie titles with brief info and link to IMDB page!
+React.js application using some Bootstrap, Axios, useState and useEffect to call OMDB API twice, once to retrieve imdbID, and once with key as prop to retrieve additional info from IMDb. 
