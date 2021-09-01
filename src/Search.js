@@ -24,7 +24,7 @@ useEffect(() => {
         console.log(movieId)
       })
   }
-  const onClick = () => {
+  const onSearch = () => {
     getId();
   };
   const onKeyDown = (e) => {
@@ -32,23 +32,31 @@ useEffect(() => {
       getId();
     }
   }  
-
+  const onClear = (e) => {
+    setSearch("");
+    setMovieId([]);
+  }
   
   
 
 
     return (
-      <Container className="container">
-      <h2>Quick Movie Title Search</h2>
-      <input type="text" placeholder="Search..." onChange={e => {setSearch(e.target.value)}} onKeyDown={onKeyDown}/>
-      <div className="btn btn-primary btn-sm" onClick={onClick} style={{margin: "0.5rem"}}>Search</div>
-      <div>
-      
-       {movieId.map(movie => (
-       <App movieId={movie.imdbID} key={movie.imdbID}/>
-       ))}
+      <div className="container">
+      <h2>Movie Title Search</h2>
+      <div className="search-container d-flex flex-row align-items-center">
+      <input type="text" placeholder="Enter Movie Title..." onChange={e => {setSearch(e.target.value)}} value={search} onKeyDown={onKeyDown} className="search-bar"/>
+      <button className="reset btn btn-danger btn-sm" onClick={onClear}>Reset</button>
       </div>
-    </Container>
+      <div className="btn btn-primary btn-lg" onClick={onSearch} onChange={() => {setSearch("")}} style={{margin: "0.5rem"}}>Search</div>
+      <div>
+      {movieId.length > 0 ? 
+       (movieId.map(movie => (
+       <App movieId={movie.imdbID} key={movie.imdbID}/>
+       ))) : (
+         <p>No movies found.</p>
+       )}
+      </div>
+    </div>
         
         
     )

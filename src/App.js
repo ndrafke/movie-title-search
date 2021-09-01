@@ -9,7 +9,7 @@ import axios from 'axios';
 export default function App(props) {
   
   const [movies, setMovies] = useState([]);
-  
+  const [imdb, setImdb] = useState(props.movieId);
 
   useEffect(() => {
     let mounted = true;
@@ -17,7 +17,8 @@ export default function App(props) {
       let res = await axios.get(
         `https://www.omdbapi.com/?i=${props.movieId}&apikey=4079f89d&plot=full`);
         if(mounted){
-        setMovies(res.data|| []);
+        setMovies([res.data]|| []);
+        setImdb("");
         console.log(movies);
         }
       };
@@ -26,31 +27,35 @@ export default function App(props) {
       return() => {
         mounted = false;
       }
-  }, []);
+  }, [imdb]);
  
-  
+
   
  
     
   return (
-    <Container>
-        {Object.keys(movies).map((movie) => (
-      <div className="result" key={movie}>
-        <ul>
-        <li key={movie}>
+    <div>
+        {movies.map((movie) => (
+      <div className="result m-2" key={movie}>
+        <div className="d-flex flex-row align-items-end m-1">
         <img className= "poster" src={movie.Poster} alt="movie poster"></img>
-        <h6>Title: {movie.Title}</h6>
-        <p>imdbRating: {movie.imdbRating}</p>
-        <p>{movie.Type}</p>
-        <p>{movie.Year}</p>
-        <p>{movie.Genre}</p>
+          <div className="d-flex flex-column justify-content-center m-2">
+          <h6>{movie.Title}  ({movie.Year})</h6>
+          <p>Rated {movie.Rated}</p>
+          <p>{movie.Genre} - {movie.Type}</p>
+          <p>{movie.imdbRating}</p>
+          </div>
+        </div>
+        <div className="d-flex flex-column m-2">
+        <p>Directed by {movie.Director}</p>
+        <p>Written by {movie.Writer}</p>
+        <p>Cast: {movie.Actors}</p>
         <p>{movie.Plot}</p>
-        <p><a href={`https://www.imdb.com/title/${movie.imdbID}`} target="_blank">IMDB page</a></p>
-        </li>
-        </ul>
+        <p><a href={`https://www.imdb.com/title/${movie.imdbID}`} target="_blank">Go to IMDb page</a></p>
+        </div>
         </div>
         ))}
-        </Container>
+        </div>
   );
     }
 

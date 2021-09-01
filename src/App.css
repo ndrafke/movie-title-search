@@ -1,5 +1,10 @@
+#root {
+  background-color: burlywood;
+}
+
 .container {
   min-height: 100vh;
+  width: 95vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,12 +12,31 @@
 }
 
 .poster {
-  height: 6rem;
-  width: 4.5rem;
+  height: 8rem;
+  width: 6rem;
 }
 .result {
-  background-color: burlywood;
-  border: 0.5rem solid black;
-  padding: 1rem;
-  margin: 1rem;
+  background-color: white;
+  border: 0.2rem solid black;
+  font-size: 0.7rem;
+}
+.result a {
+  color: blue;
+  text-decoration: none;
+}
+.result a:hover {
+  color: red;
+  text-decoration: none;
+}
+.search-bar {
+  width: 100%;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+.search-container {
+  width: 50%;
+}
+.reset {
+  height: 50%;
+  width: 20%;
 }
