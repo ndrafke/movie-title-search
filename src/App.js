@@ -43,7 +43,7 @@ export default function App(props) {
           <h6>{movie.Title}  ({movie.Year})</h6>
           <p>Rated {movie.Rated}</p>
           <p>{movie.Genre} - {movie.Type}</p>
-          <p>{movie.imdbRating}</p>
+          <p>IMDb Rating: {movie.imdbRating} / 10</p>
           </div>
         </div>
         <div className="d-flex flex-column m-2">

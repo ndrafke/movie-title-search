@@ -42,12 +42,14 @@ useEffect(() => {
 
     return (
       <div className="container">
-      <h2>Movie Title Search</h2>
+        <div className="d-flex flex-row align-items-center">
+      <img src="https://i.imgur.com/8PVUi1r.png" alt="film reel logo" id="film-logo"></img><h2 className="m-3">Movie Title Search</h2>
+      </div>
       <div className="search-container d-flex flex-row align-items-center">
       <input type="text" placeholder="Enter Movie Title..." onChange={e => {setSearch(e.target.value)}} value={search} onKeyDown={onKeyDown} className="search-bar"/>
-      <button className="reset btn btn-danger btn-sm" onClick={onClear}>Reset</button>
+      <button className="reset btn btn-danger btn-sm" onClick={onClear}><span>Reset</span></button>
       </div>
-      <div className="btn btn-primary btn-lg" onClick={onSearch} onChange={() => {setSearch("")}} style={{margin: "0.5rem"}}>Search</div>
+      <button className="btn btn-primary btn-md" onClick={onSearch} onChange={() => {setSearch("")}} style={{margin: "0.5rem"}}><span>Search</span></button>
       <div>
       {movieId.length > 0 ? 
        (movieId.map(movie => (
