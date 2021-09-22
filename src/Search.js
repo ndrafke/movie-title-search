@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from 'axios';
 
 export default function Search() {
-
+// Search input area for movie title to fetch imdb ID:
 const [search, setSearch] = useState('');
 const [movieId, setMovieId] = useState([]);
 
@@ -24,14 +24,17 @@ useEffect(() => {
         console.log(movieId)
       })
   }
+  // Submit initial search for movie title
   const onSearch = () => {
     getId();
   };
+  // Enter key to submit search
   const onKeyDown = (e) => {
     if(e.key === "Enter"){
       getId();
     }
   }  
+  // Clear search input
   const onClear = (e) => {
     setSearch("");
     setMovieId([]);

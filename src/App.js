@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from 'axios';
 
 
 
 export default function App(props) {
-  
+  // Second API call for more data using imdb ID:
   const [movies, setMovies] = useState([]);
   const [imdb, setImdb] = useState(props.movieId);
 
+  // useEffect runs when new imdb ID is provided as prop.
   useEffect(() => {
     let mounted = true;
     const getMovies = async () => {
