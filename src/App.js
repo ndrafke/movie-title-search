@@ -34,22 +34,25 @@ export default function App(props) {
  
     
   return (
-    <div>
+    <div className="card-group">
         {movies.map((movie) => (
-      <div className="result m-2" key={movie}>
-        <div className="d-flex flex-row align-items-end m-1">
-        <img className= "poster" src={movie.Poster} alt="movie poster"></img>
-          <div className="d-flex flex-column justify-content-center m-2">
-          <h6>{movie.Title}  ({movie.Year})</h6>
+      <div className="card m-1 p-2" key={movie} style={{width: "20rem", border: "1px solid black"}}>
+       
+        <img className= "card-img-top mt-2" src={movie.Poster} alt="movie poster" style={{backgroundColor: "lightgray", objectFit: "contain", maxHeight: "10rem"}} />
+          <div className="card-body" style={{fontSize: "0.7rem", backgroundColor: "lightgray", height: "25%"}}>
+          <p className="card-title" style={{fontSize: "0.9rem", fontWeight: "bold"}}>{movie.Title}<br/>({movie.Year})</p>
+
           <p>Rated {movie.Rated}</p>
           <p>{movie.Genre} - {movie.Type}</p>
           <p>IMDb Rating: {movie.imdbRating} / 10</p>
           </div>
-        </div>
-        <div className="d-flex flex-column m-2">
+        
+        <div className="card-body" style={{fontSize: "0.7rem", height: "15%"}}>
         <p>Directed by {movie.Director}</p>
         <p>Written by {movie.Writer}</p>
         <p>Cast: {movie.Actors}</p>
+        </div>
+        <div className="card-body d-flex flex-column justify-content-between" style={{fontSize: "0.7rem", height: "60%"}}>
         <p>{movie.Plot}</p>
         <p><a href={`https://www.imdb.com/title/${movie.imdbID}`} target="_blank">Go to IMDb page</a></p>
         </div>

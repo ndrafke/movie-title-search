@@ -1,10 +1,5 @@
 #root {
-  background: rgb(215, 168, 16);
-  background: radial-gradient(
-    circle,
-    rgba(248, 218, 121, 0.705) 66%,
-    rgba(255, 244, 124, 0.758) 100%
-  );
+  background: rgb(231, 193, 68);
 }
 h2 {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -14,17 +9,20 @@ h2 {
   width: 2rem;
 }
 .container {
-  min-height: 100vh;
+  height: 25vh;
   width: 95vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
-
+.results {
+  background: rgb(231, 193, 68);
+  min-height: 75vh;
+}
 .poster {
-  height: 8rem;
-  width: 6rem;
+  max-height: 10rem;
+  object-fit: contain;
+  padding: 0.5rem, 0.5rem, 0rem, 0.5rem;
 }
 .result {
   background-color: white;

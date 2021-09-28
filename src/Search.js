@@ -44,6 +44,7 @@ useEffect(() => {
 
 
     return (
+      <div>
       <div className="container">
         <div className="d-flex flex-row align-items-center">
       <img src="https://i.imgur.com/8PVUi1r.png" alt="film reel logo" id="film-logo"></img><h2 className="m-3">Movie Title Search</h2>
@@ -53,7 +54,8 @@ useEffect(() => {
       <button className="reset btn btn-danger btn-sm" onClick={onClear}><span>Reset</span></button>
       </div>
       <button className="btn btn-primary btn-md" onClick={onSearch} onChange={() => {setSearch("")}} style={{margin: "0.5rem"}}><span>Search</span></button>
-      <div>
+      </div>
+      <div className="results d-flex flex-wrap justify-content-center">
       {movieId.length > 0 ? 
        (movieId.map(movie => (
        <App movieId={movie.imdbID} key={movie.imdbID}/>
@@ -61,8 +63,8 @@ useEffect(() => {
          <p>No movies found.</p>
        )}
       </div>
-    </div>
-        
+    
+    </div>   
         
     )
 }
