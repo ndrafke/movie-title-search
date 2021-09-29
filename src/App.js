@@ -38,8 +38,8 @@ export default function App(props) {
         {movies.map((movie) => (
       <div className="card m-1 p-2" key={movie} style={{width: "20rem", border: "1px solid black"}}>
        
-        <img className= "card-img-top mt-2" src={movie.Poster} alt="movie poster" style={{backgroundColor: "lightgray", objectFit: "contain", maxHeight: "10rem"}} />
-          <div className="card-body" style={{fontSize: "0.7rem", backgroundColor: "lightgray", height: "25%"}}>
+        <img className= "card-img-top mt-2" src={movie.Poster} alt="movie poster" style={{backgroundColor: "lightblue", objectFit: "contain", maxHeight: "10rem"}} />
+          <div className="card-body" style={{fontSize: "0.7rem", backgroundColor: "lightblue", height: "25%"}}>
           <p className="card-title" style={{fontSize: "0.9rem", fontWeight: "bold"}}>{movie.Title}<br/>({movie.Year})</p>
 
           <p>Rated {movie.Rated}</p>

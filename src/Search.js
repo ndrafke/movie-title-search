@@ -51,9 +51,9 @@ useEffect(() => {
       </div>
       <div className="search-container d-flex flex-row align-items-center">
       <input type="text" placeholder="Enter Movie Title..." onChange={e => {setSearch(e.target.value)}} value={search} onKeyDown={onKeyDown} className="search-bar"/>
-      <button className="reset btn btn-danger btn-sm" onClick={onClear}><span>Reset</span></button>
+      <button className="reset btn btn-dark btn-sm" onClick={onClear}><span>Reset</span></button>
       </div>
-      <button className="btn btn-primary btn-md" onClick={onSearch} onChange={() => {setSearch("")}} style={{margin: "0.5rem"}}><span>Search</span></button>
+      <button className="btn btn-primary btn-md" onClick={onSearch} onChange={() => {setSearch("")}} style={{margin: "0.5rem", color: "black", backgroundColor: "lightblue"}}><span>Search</span></button>
       </div>
       <div className="results d-flex flex-wrap justify-content-center">
       {movieId.length > 0 ? 

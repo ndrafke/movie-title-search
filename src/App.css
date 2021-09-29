@@ -1,5 +1,5 @@
 #root {
-  background: rgb(231, 193, 68);
+  background: rgb(241, 209, 103);
 }
 h2 {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -16,24 +16,15 @@ h2 {
   align-items: center;
 }
 .results {
-  background: rgb(231, 193, 68);
+  background: rgb(241, 209, 103);
   min-height: 75vh;
 }
-.poster {
-  max-height: 10rem;
-  object-fit: contain;
-  padding: 0.5rem, 0.5rem, 0rem, 0.5rem;
-}
-.result {
-  background-color: white;
-  border: 0.2rem solid black;
-  font-size: 0.7rem;
-}
-.result a {
+
+.results a {
   color: blue;
   text-decoration: none;
 }
-.result a:hover {
+.results a:hover {
   color: red;
   text-decoration: none;
 }
@@ -46,9 +37,8 @@ h2 {
   width: 60%;
 }
 .reset {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+  background-color: black;
 }
 .reset span {
   font-size: 0.6rem;
