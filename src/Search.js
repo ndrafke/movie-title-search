@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import { Container } from "react-bootstrap";
-import App from './App.js';
+import React, {useState, useEffect} from 'react';
+import Results from './Results.js';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from 'axios';
@@ -46,7 +45,7 @@ useEffect(() => {
     return (
       <div>
       <div className="container">
-        <div className="d-flex flex-row align-items-center">
+        <div className="d-flex flex-row align-items-center" >
       <img src="https://i.imgur.com/8PVUi1r.png" alt="film reel logo" id="film-logo"></img><h2 className="m-3">Movie Title Search</h2>
       </div>
       <div className="search-container d-flex flex-row align-items-center">
@@ -58,9 +57,9 @@ useEffect(() => {
       <div className="results d-flex flex-wrap justify-content-center">
       {movieId.length > 0 ? 
        (movieId.map(movie => (
-       <App movieId={movie.imdbID} key={movie.imdbID}/>
+       <Results movieId={movie.imdbID} key={movie.imdbID}/>
        ))) : (
-         <p>No movies found.</p>
+         ""
        )}
       </div>
     
