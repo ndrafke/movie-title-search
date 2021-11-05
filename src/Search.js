@@ -17,7 +17,7 @@ useEffect(() => {
 
   const getId = async () => {
     await axios.get(
-      `https://www.omdbapi.com/?s=${search}&apikey=4079f89d&plot=full`).then((res) => {
+      `https://www.omdbapi.com/?s=${search}&apikey=${process.env.REACT_APP_API_KEY}&plot=full`).then((res) => {
         console.log(res.data.Search);
         setMovieId(res.data.Search || []);
         console.log(movieId)
