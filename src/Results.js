@@ -15,7 +15,7 @@ export default function Results(props) {
     let mounted = true;
     const getMovies = async () => {
       let res = await axios.get(
-        `https://www.omdbapi.com/?i=${props.movieId}&apikey=4079f89d`);
+        `https://www.omdbapi.com/?i=${props.movieId}&apikey=${process.env.REACT_APP_API_KEY}`);
         if(mounted){
         setMovies([res.data]|| []);
         setImdb("");
